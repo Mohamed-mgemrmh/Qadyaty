@@ -732,6 +732,7 @@ margin-right: 15px;
     margin-bottom: -40px;
     z-index: 100;
     position: relative;
+    font-size: 60px;
 }
 }
 @media (max-width: 320px) {
