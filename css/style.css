@@ -15,6 +15,181 @@ body {
   overflow-x: hidden;
   font-family: sans-serif;
 }
+.visible {
+  height: fit-content;
+}
+.pre-loader {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  position: relative;
+  z-index: 1000;
+}
+.pre-loader .container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.pre-loader .barcode {
+  animation: barcode 2s ease-out;
+  position: relative;
+  width: 1px;
+  height: 50px;
+  background: white;
+  animation-fill-mode: forwards;
+  text-align: center;
+  transition: 5s;background: linear-gradient(
+    to right,
+    white 0%,
+    white 5%,
+    black 5%,
+    black 7%,
+    white 7%,
+    white 10%,
+    black 10%,
+    black 13%,
+    white 13%,
+    white 17%,
+    black 17%,
+    black 22%,
+    white 22%,
+    white 25%,
+    black 25%,
+    black 26%,
+    white 26%,
+    white 29%,
+    black 29%,
+    black 31%,
+    white 31%,
+    white 33%,
+    black 33%,
+    white 33%,
+    white 35%,
+    black 35%,
+    black 36%,
+    white 36%,
+    white 38%,
+    black 38%,
+    black 43%,
+    white 43%,
+    white 45%,
+    black 45%,
+    black 46%,
+    white 46%,
+    white 48%,
+    black 48%,
+    black 49%,
+    white 49%,
+    white 53%,
+    black 53%,
+    black 56%,
+    white 56%,
+    white 58%,
+    black 58%,
+    white 58%,
+    white 60%,
+    black 60%,
+    black 62%,
+    black 62%,
+    white 62%,
+    white 65%,
+    black 65%,
+    black 67%,
+    white 67%,
+    white 69%,
+    black 69%,
+    black 73%,
+    white 73%,
+    white 75%,
+    black 75%,
+    black 76%,
+    white 76%,
+    white 78%,
+    black 78%,
+    black 80%,
+    white 80%,
+    white 82%,
+    black 82%,
+    white 82%,
+    white 85%,
+    black 85%,
+    black 88%,
+    white 88%,
+    white 91%,
+    black 91%,
+    black 93%,
+    white 93%,
+    white 95%,
+    black 95%,
+    black 100%
+  );
+}
+.pre-loader .barcode::before {
+  content: '7290000000';
+  opacity: 0;
+  position: absolute;
+  bottom: -55px;
+  right: 0;
+  letter-spacing: .3cap;
+  font-size: 30px;
+  width: 80%;
+  margin: 0 8% 0 12% ;
+  animation: barcode-text 2s ease-out;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes barcode-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes barcode {
+  0% { width: 0px; }
+  100% { width: 350px; }
+  
+}
+@keyframes barcode-phone {
+  0% { width: 0px; }
+  100% { width: 250px; }
+  
+}
+.none {
+  display: none;
+}
+.pre-loader .text {
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 150px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 100px;
+  animation: text 2s ease-out;
+  animation-fill-mode: forwards;
+}
+@media (max-width: 414px) {
+  .pre-loader .barcode {
+    animation-name: barcode-phone;
+  }
+  .pre-loader .barcode::before {
+    font-size: 25px;
+  }
+  .pre-loader .text {
+    font-size: 100px;
+  }
+}
+@keyframes text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
