@@ -137,7 +137,9 @@ a {
   padding-top: 15px;
   overflow: hidden;
 }
-
+.boxes-container .box .text-img-container h2::-webkit-scrollbar {
+  display: none;
+}
 .boxes-preview {
   position: fixed;
   top: 0;
