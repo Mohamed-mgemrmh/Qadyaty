@@ -59,3 +59,25 @@ function remove(ele) {
     downMenu.classList.remove("down-menu-small-clicked");
   };
 }
+
+let preloader = document.querySelector(".pre-loader");
+let bodyClass = document.querySelector("body");
+
+setTimeout(() => {
+  preloader.classList.add('none');
+  
+  if(preloader.classList.contains('none')) {
+    console.log("true");
+    bodyClass.classList.add("visible");
+    // landing page gsap animation;
+    gsap.from(".header", { duration: 1, y: "-100%", ease: "slow" });
+    gsap.from(".animate", { duration: 1, opacity: 0, delay: 1, stagger: 0.3 });
+    gsap.from(".landing-text", { duration: 1.8, x: "100vw", delay: 1.6 });
+    gsap.from(".landing-main", {
+      duration: 1,
+      delay: 3.6,
+      opacity: 0,
+      ease: "bounce",
+    });
+  }
+}, 2900);
