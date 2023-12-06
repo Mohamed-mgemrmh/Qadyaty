@@ -135,7 +135,7 @@ a {
 }
 .boxes-container .box .text-img-container h2 {
   padding-top: 15px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .boxes-preview {
