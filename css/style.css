@@ -1,11 +1,19 @@
 :root {
   --main-color: rgb(83, 158, 52);
-  --secondry-color: #000;
+  --secondry-color: #DDD;
+}
+*::selection {
+  background-color:#eee;
+  color: var(--main-color);
+}
+img {
+  user-select: none;
 }
 body {
   margin: 0;
   direction: rtl;
   overflow-x: hidden;
+  font-family: sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -88,7 +96,7 @@ html {
 }
 .contact-links > div i {
   color: white;
-  font-size: 25px;
+  font-size: 27px;
 }
 .header .icon {
   width: 35px;
@@ -145,12 +153,12 @@ html {
   display: flex;
 }
 .header nav ul li {
-  margin-left: 10px;
+  margin: 0 10px;
   list-style: none;
 }
 .header nav ul li a {
   text-decoration: none;
-  color: var(--secondry-color);
+  color: black;
   position: relative;
   font-weight: bold;
   padding-bottom: 2px;
@@ -206,20 +214,14 @@ html {
 }
 .landing .landing-text .boxes {
   display: flex;
-  flex-direction: colums;
+  justify-content: space-evenly;
 }
-.landing .landing-text .boxes .box {
-  width: 100px;
-  height: 35px;
-  background-color: black;
-  color: white;
-  font-family: sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  margin: 10px;
-  margin-top: auto;
+.landing .landing-text .boxes .box img {
+  width: 110px;
+  border-radius: 3px;
+}
+.landing .landing-text .boxes .box-3 img {
+  border-radius: 5px;
 }
 .landing .landing-main {
   font-size: 280px;
@@ -379,9 +381,9 @@ html {
 /* start companies section  */
 .company-section {
   background-color: rgb(247, 247, 247);
-  padding-bottom: 140px;
+  padding-bottom: 20px;
 }
-.company-section .main-text {
+.main-text {
   font-size: 75px;
   text-align: center;
   font-weight: bold;
@@ -397,7 +399,7 @@ html {
 .box-container a {
   width: 100%;
   text-decoration: none;
-  box-shadow: 4px 4px 6px #ddd;
+  box-shadow: 4px 4px 6px var(--secondry-color);
   border-radius: 15px;
 }
 .box-container {
@@ -434,23 +436,125 @@ html {
   color: black;
   margin: 20px calc(15% / 2);
 }
-@media (max-width: 767px) {
-  .box-container {
-    width: calc(100% / 2.5);
-    margin-top: 15px;
-  }
-}
-
-@media (max-width: 500px) {
-  .box-container {
-    width: 80%;
-  }
-}
-
 
 /* end companies section  */
+/* why boycott  */
+.why-boycott {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.why-boycott .text {
+  width: 70%;
+}
+.why-boycott .text p{ 
+  color: #444;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 140px;
+}
+.why-boycott .text .boxes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.why-boycott .text .boxes .box {
+  width: 100px;
+  height: 35px;
+  background-color: #ddd;
+  color: var(--main-color);
+  margin-bottom: 30px;
+  border-radius: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* end why boycot  t*/
+/* contact us  */
+.contact-us {
+  background-color: rgb(247, 247, 247);
+}
+.contact-us .contact-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.contact-us .contact-container .contact {
+  flex-basis: 50%;
+  border-left: 2px solid var(--main-color);
+}
+.contact-us .contact-container .contact h1 {
+  color: #444;
+  font-size: 50px;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.contact-us .contact-container .contact .contact-content {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.contact-us .contact-content .icon-container {
+  display: flex;
+  padding: 5px;
+}
+.contact-us .contact-content i {
+  font-size: 30px;
+  color: var(--main-color);
+  margin-left: 8px;
+}
+.contact-us .developers {
+  flex-basis: 50%;
+}
+
+.contact-us .developers h1 {
+  color: #444;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.contact-us .developers .contact-content {
+  padding-right: 20px;
+}
+.contact-us .developers .sponsers .sponser-text {
+  color: #444;
+  font-size: 20px;
+  padding: 12px;
+  font-weight: bold;
+}
+.contact-us .developers .sponsers .sponser-text span {
+  font-weight: lighter;
+}
+/* end contact us  */
+/* start footer  */
 
 
+
+.footer {
+  width: 100%;
+  background-color: var(--main-color);
+  direction: ltr;
+}
+.footer .copy-right {
+  padding: 10px;
+  text-align: center;
+  font-family: sans-serif;
+  color: var(--secondry-color);
+  font-weight: bold;
+}
+.footer .copy-right span {
+  color: #444;
+}
+
+/* end footer  */
 /* media queries */
 @media (max-width: 767px) {
   .header nav ul{
@@ -488,14 +592,6 @@ html {
   .landing .landing-text p {
     font-size: 30px;
   }
-  .landing .landing-text .boxes .box {
-    font-size: 12px;
-    width: 80px;
-    height: 30px;
-  }
-  /* .landing .landing-text .boxes .box:last-child {
-    margin-left: 0;
-  } */
   .landing .landing-main {
     font-size: 150px;
     margin-left: 0px;
@@ -528,8 +624,15 @@ html {
   .landing .landing-main::before {
     font-size: 45px;
   }
+  .why-boycott .text p {
+    margin-bottom: 40px;
+    font-size: 1.7rem;
+    margin-top: 0;
+  }
+  .why-boycott .text p span {
+    display: none;
+  }
 }
-
 @media (max-width: 799px) {
   .slider-img,
   .slider {
@@ -546,6 +649,9 @@ html {
 .navigation-manual,
 .navigation-auto {
   width: 600px;
+}
+.landing .landing-text .boxes .box img {
+margin-right: 15px;
 }
 }
 @media (max-width: 599px) {
@@ -598,6 +704,35 @@ html {
     padding: 3.5px;
     margin-right: 30px;
   }
+  .text .boxes {
+    flex-direction: column;
+  }
+  .text p span {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .box-container {
+    width: calc(100% / 2.5);
+    margin-top: 15px;
+  }
+  .landing .landing-text .boxes .box img {
+    width: 85px;
+    margin: 0;
+  }
+}
+@media (max-width: 500px) {
+  .box-container {
+    width: 80%;
+  }
+  .main-text {
+    font-size: 60px;
+  }
+  .dont-forget h1 {
+    margin-bottom: -40px;
+    z-index: 100;
+    position: relative;
+}
 }
 @media (max-width: 320px) {
   .navigation-manual,
@@ -610,5 +745,42 @@ html {
   }
   .dont-forget h1 {
     font-size: 45px;
+  }
+  .main-text {
+    font-size: 50px;
+  }
+  .contact-us .contact-container .contact h1 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 940px) {
+  .contact-us .contact-container .contact h1,
+  .contact-us .developers h1 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 800px) {
+  .contact-us .contact-container .contact h1,
+  .contact-us .developers h1 {
+    font-size: 30px;
+  }
+  .contact-us .contact-content i {
+    font-size: 20px;
+  }
+  .contact-us .developers .sponsers .sponser-text {
+    font-size: 20px;
+  }
+  .contact-us .developers .sponsers .sponser-text span {
+    font-size: 18px;
+  }
+}
+@media (max-width: 574px) {
+  .contact-us .contact-container {
+    flex-direction: column;
+  }
+  .contact-us .contact-container .contact {
+    border: none;
+    border-bottom: 2px solid var(--main-color);
+    margin-bottom: 20px;
   }
 }
