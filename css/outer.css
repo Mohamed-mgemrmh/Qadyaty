@@ -2,6 +2,13 @@
   --main-color: rgb(83, 158, 52);
   --secondry-color: #000;
 }
+*::selection {
+  background-color: #eee;
+  color: var(--main-color);
+}
+img {
+  user-select: none;
+}
 a {
   text-decoration: none;
   color: currentColor;
