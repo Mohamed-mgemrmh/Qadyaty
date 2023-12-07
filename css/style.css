@@ -592,6 +592,7 @@ html {
   align-items: center;
   background-color: rgb(236, 236, 236);
   border-radius: 15px;
+
 }
 .box-container .img-text-container img {
   width: 100%;
@@ -682,8 +683,11 @@ html {
   flex-direction: column;
   margin-bottom: 20px;
 }
-.contact-us .contact-content .icon-container {
+.contact-us .contact-content .icon-container a {
+  text-decoration: none;
+  color: currentColor;
   display: flex;
+  align-items: center;
   padding: 5px;
 }
 .contact-us .contact-content i {
