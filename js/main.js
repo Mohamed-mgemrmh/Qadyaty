@@ -1,5 +1,16 @@
-// auto image slider
+// decleration
+let landing = document.querySelector(".landing");
+let link = document.querySelectorAll(".link");
+let icon = document.querySelector(".icon");
+let firstXClass = document.querySelector(".first-span");
+let secondXClass = document.querySelector(".second-span");
+let thirdXClass = document.querySelector(".third-span");
+let downMenu = document.querySelector(".down-menu");
+let preloader = document.querySelector(".pre-loader");
+let bodyClass = document.querySelector("body");
 var counter = 1;
+
+
 setInterval(() => {
   let checker = document.getElementById("radio" + counter);
   checker.checked = true;
@@ -9,14 +20,6 @@ setInterval(() => {
   }
 }, 4000);
 
-// burger menu
-let landing = document.querySelector(".landing");
-let link = document.querySelectorAll(".link");
-let icon = document.querySelector(".icon");
-let firstXClass = document.querySelector(".first-span");
-let secondXClass = document.querySelector(".second-span");
-let thirdXClass = document.querySelector(".third-span");
-let downMenu = document.querySelector(".down-menu");
 
 icon.onclick = () => {
   firstXClass.classList.toggle("first-x-class");
@@ -32,6 +35,26 @@ link.forEach((ele) => {
 
 remove(landing);
 
+
+if (window.location.href.includes('#')) {
+  preloader.classList.add('none');
+  bodyClass.classList.add("visible")
+} else {
+  preloaderFunction();
+  animtaion();
+}
+
+// functions 
+
+function preloaderFunction() {
+  setTimeout(() => {
+    preloader.classList.add('none');
+    
+    if(preloader.classList.contains('none')) {
+      bodyClass.classList.add("visible");
+    }
+  }, 2900);
+}
 function remove(ele) {
   ele.onclick = () => {
     firstXClass.classList.remove("first-x-class");
@@ -41,25 +64,14 @@ function remove(ele) {
     downMenu.classList.remove("down-menu-small-clicked");
   };
 }
-
-let preloader = document.querySelector(".pre-loader");
-let bodyClass = document.querySelector("body");
-
-setTimeout(() => {
-  preloader.classList.add('none');
-  
-  if(preloader.classList.contains('none')) {
-    console.log("true");
-    bodyClass.classList.add("visible");
-    // landing page gsap animation;
-    gsap.from(".header", { duration: 1, y: "-100%", ease: "slow" });
-    gsap.from(".animate", { duration: 1, opacity: 0, delay: 1, stagger: 0.3 });
-    gsap.from(".landing-text", { duration: 1.8, x: "100vw", delay: 1.6 });
-    gsap.from(".landing-main", {
-      duration: 1,
-      delay: 3.6,
-      opacity: 0,
-      ease: "bounce",
-    });
-  }
-}, 2900);
+function animtaion() {
+gsap.from(".header", { duration: 1, y: "-100%", ease: "slow", delay: 2.9 });
+gsap.from(".animate", { duration: 1, opacity: 0, delay: 3.9, stagger: 0.3 });
+gsap.from(".landing-text", { duration: 1.8, x: "100vw", delay: 4.9 });
+gsap.from(".landing-main", {
+  duration: 1,
+  delay: 6.7,
+  opacity: 0,
+  ease: "bounce",
+});
+}
