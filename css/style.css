@@ -6,6 +6,11 @@
   background-color:#eee;
   color: var(--main-color);
 }
+/* start pre loader  */
+
+
+/* end pre loader  */
+
 img {
   user-select: none;
 }
@@ -14,6 +19,8 @@ body {
   direction: rtl;
   overflow-x: hidden;
   font-family: sans-serif;
+  overflow: hidden;
+  height: 100vh;
 }
 .visible {
   height: fit-content;
