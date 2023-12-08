@@ -6,11 +6,10 @@
   background-color:#eee;
   color: var(--main-color);
 }
-/* start pre loader  */
-
-
-/* end pre loader  */
-
+.overflow {
+  overflow: hidden;
+  direction: ltr;
+}
 img {
   user-select: none;
 }
@@ -164,6 +163,10 @@ body {
   0% { width: 0px; }
   100% { width: 250px; }
   
+}
+a {
+  color: currentColor;
+  text-decoration: none;
 }
 .none {
   display: none;
@@ -627,16 +630,19 @@ html {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .why-boycott .text {
   width: 70%;
+  margin-top: -40px;
 }
 .why-boycott .text p{ 
   color: #444;
   font-size: 2rem;
   text-align: center;
-  margin-bottom: 140px;
+}
+.why-boycott .text p span {
+  color: var(--main-color);
 }
 .why-boycott .text .boxes {
   display: flex;
@@ -644,9 +650,8 @@ html {
   align-items: center;
 }
 .why-boycott .text .boxes .box {
-  width: 100px;
-  height: 35px;
-  background-color: #ddd;
+  background-color: transparent;
+  border: 2px solid #ddd;
   color: var(--main-color);
   margin-bottom: 30px;
   border-radius: 15px;
@@ -654,6 +659,32 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
+  position: relative;
+  transition: .7s;
+}
+.why-boycott .text .boxes .box::before {
+  content: "";
+  width: 0px;
+  height: 100%;;
+  background-color: #ddd; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: .7s;
+  border-radius: 10px;
+  z-index: -1;
+  background-color: var(--main-color);
+}
+.why-boycott .text .boxes .box:hover::before {
+  width: 100%;
+  right: 0;
+}
+.why-boycott .text .boxes .box:hover {
+  color: white;
+  border-color: var(--main-color);
+  box-shadow: 1px 1px 5px var(--main-color),
+            -1px -1px 5px var(--main-color);
 }
 /* end why boycot  t*/
 /* contact us  */
@@ -812,11 +843,7 @@ html {
   }
   .why-boycott .text p {
     margin-bottom: 40px;
-    font-size: 1.7rem;
-    margin-top: 0;
-  }
-  .why-boycott .text p span {
-    display: none;
+    font-size: 25px;
   }
 }
 @media (max-width: 799px) {
@@ -892,9 +919,6 @@ margin-right: 15px;
   }
   .text .boxes {
     flex-direction: column;
-  }
-  .text p span {
-    display: none;
   }
 }
 @media (max-width: 767px) {
