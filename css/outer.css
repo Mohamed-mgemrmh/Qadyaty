@@ -15,6 +15,7 @@ a {
   display: flex;
   justify-content: center;
 }
+
 ::-webkit-scrollbar {
     width: 15px;
     scrollbar-color: var(--main-color) rgba(238, 238, 238);
@@ -112,7 +113,8 @@ a {
   place-items: center;
   justify-content: center;
 }
-.boxes-container .box {
+.boxes-container .box,
+.boxes-container .boxx {
   display: flex;
   justify-content: center;
   margin-top: 25px;
@@ -120,24 +122,30 @@ a {
   transform: scale(.92);
   transition: .5s;
 }
-.boxes-container .box:hover {
+.boxes-container .box:hover,
+.boxes-container .boxx:hover {
   transform: scale(1);
 }
-.boxes-container .box .text-img-container {
+.boxes-container .box .text-img-container,
+.boxes-container .boxx .text-img-container {
   width: 80%;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.boxes-container .box .text-img-container img {
+.boxes-container .box .text-img-container img,
+.boxes-container .boxx .text-img-container img {
+  
   max-width: 100%;
 }
-.boxes-container .box .text-img-container h2 {
+.boxes-container .box .text-img-container h2,
+.boxes-container .boxx .text-img-container h2 {
   padding-top: 15px;
   overflow: hidden;
 }
-.boxes-container .box .text-img-container h2::-webkit-scrollbar {
+.boxes-container .box .text-img-container h2::-webkit-scrollbar,
+.boxes-container .boxx .text-img-container h2::-webkit-scrollbar {
   display: none;
 }
 .boxes-preview {
